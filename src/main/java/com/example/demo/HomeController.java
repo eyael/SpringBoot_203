@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
     @GetMapping("/songform")
-    public String loadFormpage(Model model){
-        model.addAttribute("song",new song());
+    public String loadFormpage(Model model) {
+        model.addAttribute("song", new Song());
         return "songform";
+    }
         @PostMapping("/songform")
-                public String loadFromPage(@ModelAttribute Song song,
-        Model model) {
+                public String loadFromPage(@ModelAttribute Song song, Model model){
             model.addAttribute("song", song);
             return "confirmsong";
         }
     }
-}
+
